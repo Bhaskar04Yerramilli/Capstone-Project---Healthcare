@@ -1,0 +1,84 @@
+﻿@model HealthcareAnalytics.Web.ViewModels.LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-6">
+
+            <div class="card shadow">
+
+                <!-- Card Header -->
+                <div class="card-header bg-primary text-white text-center">
+                    <h3>Healthcare Analytics Login</h3>
+                </div>
+
+                <!-- Card Body -->
+                <div class="card-body">
+
+                    <!-- Login Form -->
+                    <form asp-action="Login" method="post">
+
+                        <!-- Email -->
+                        <div class="mb-3">
+                            <label asp-for="Email"
+                                   class="form-label"></label>
+
+                            <input asp-for="Email"
+                                   class="form-control" />
+
+                            <span asp-validation-for="Email"
+                                  class="text-danger"></span>
+                        </div>
+
+                        <!-- Password -->
+                        <div class="mb-3">
+                            <label asp-for="Password"
+                                   class="form-label"></label>
+
+                            <input asp-for="Password"
+                                   type="password"
+                                   class="form-control" />
+
+                            <span asp-validation-for="Password"
+                                  class="text-danger"></span>
+                        </div>
+
+                        <!-- Login Button -->
+                        <div class="d-grid">
+                            <button type="submit"
+                                    class="btn btn-primary">
+                                Login
+                            </button>
+                        </div>
+
+                    </form>
+
+                    <hr />
+
+                    <!-- Register Redirect -->
+                    <div class="text-center">
+                        <a asp-action="Register">
+                            New User? Register Here
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

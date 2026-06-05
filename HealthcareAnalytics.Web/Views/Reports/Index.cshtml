@@ -1,0 +1,76 @@
+﻿@{
+    ViewData["Title"] = "Reports Dashboard";
+}
+
+<h1 class="text-center mb-5">
+
+    Analytics & Reports Dashboard
+
+</h1>
+
+<div class="row">
+
+    <!-- Patients Report -->
+    <div class="col-md-4">
+
+        <div class="card shadow text-center p-4">
+
+            <h3 class="text-primary">
+
+                Total Patients
+
+            </h3>
+
+            <h1>
+
+                @ViewBag.TotalPatients
+
+            </h1>
+
+        </div>
+
+    </div>
+
+    <!-- Doctors Report -->
+    <div class="col-md-4">
+
+        <div class="card shadow text-center p-4">
+
+            <h3 class="text-success">
+
+                Total Doctors
+
+            </h3>
+
+            <h1>
+
+                @ViewBag.TotalDoctors
+
+            </h1>
+
+        </div>
+
+    </div>
+
+    <!-- Appointments Report -->
+    <div class="col-md-4">
+
+        <div class="card shadow text-center p-4">
+
+            <h3 class="text-warning">
+
+                Total Appointments
+
+            </h3>
+
+            <h1>
+
+                @ViewBag.TotalAppointments
+
+            </h1>
+
+        </div>
+
+    </div>
+
+</div>

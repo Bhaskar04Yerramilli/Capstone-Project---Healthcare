@@ -1,0 +1,173 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<!-- ========================= -->
+<!-- Dashboard Heading -->
+<!-- ========================= -->
+
+<div class="text-center mt-5">
+
+    <h1 class="display-4 text-primary">
+
+        Healthcare Analytics Dashboard
+
+    </h1>
+
+    <p class="lead">
+
+        Welcome to Healthcare Management System
+
+    </p>
+
+</div>
+
+<!-- ========================= -->
+<!-- Dashboard Cards -->
+<!-- ========================= -->
+
+<div class="container mt-5">
+
+    <div class="row g-4">
+
+        <!-- ========================= -->
+        <!-- Patients Card -->
+        <!-- ========================= -->
+
+        <div class="col-md-4">
+
+            <div class="card shadow text-center p-4 h-100">
+
+                <h3 class="text-primary">
+
+                    Patients
+
+                </h3>
+
+                <h2>
+
+                    Manage Patient Records
+
+                </h2>
+
+                <br />
+
+                <a asp-controller="Patients"
+                   asp-action="Index"
+                   class="btn btn-primary">
+
+                    View Patients
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- ========================= -->
+        <!-- Doctors Card -->
+        <!-- ========================= -->
+
+        <div class="col-md-4">
+
+            <div class="card shadow text-center p-4 h-100">
+
+                <h3 class="text-success">
+
+                    Doctors
+
+                </h3>
+
+                <h2>
+
+                    Manage Doctors
+
+                </h2>
+
+                <br />
+
+                <a asp-controller="Doctors"
+                   asp-action="Index"
+                   class="btn btn-success">
+
+                    View Doctors
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- ========================= -->
+        <!-- Appointments Card -->
+        <!-- ========================= -->
+
+        <div class="col-md-4">
+
+            <div class="card shadow text-center p-4 h-100">
+
+                <h3 class="text-warning">
+
+                    Appointments
+
+                </h3>
+
+                <h2>
+
+                    Manage Appointments
+
+                </h2>
+
+                <br />
+
+                <a asp-controller="Appointments"
+                   asp-action="Index"
+                   class="btn btn-warning text-white">
+
+                    View Appointments
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ========================= -->
+    <!-- Analytics Section -->
+    <!-- ========================= -->
+
+    <div class="row mt-5">
+
+        <div class="col-md-12">
+
+            <div class="card shadow p-4 text-center">
+
+                <h3 class="text-danger">
+
+                    Analytics & Reports
+
+                </h3>
+
+                <p>
+
+                    View healthcare reports and analytics dashboard.
+
+                </p>
+
+                <a asp-controller="Reports"
+                   asp-action="Index"
+                   class="btn btn-danger">
+
+                    View Reports
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

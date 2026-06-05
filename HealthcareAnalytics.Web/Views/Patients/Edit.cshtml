@@ -1,0 +1,148 @@
+﻿@model HealthcareAnalytics.Core.Entities.Patient
+
+@{
+    ViewData["Title"] = "Edit Patient";
+}
+
+<!-- ========================================= -->
+<!-- Edit Patient Heading -->
+<!-- ========================================= -->
+
+<h1>Edit Patient</h1>
+
+<hr />
+
+<div class="row">
+
+    <div class="col-md-6">
+
+        <!-- Edit Form -->
+
+        <form asp-action="Edit">
+
+            <!-- Hidden Patient ID -->
+
+            <input type="hidden" asp-for="PatientId" />
+
+            <!-- Validation Summary -->
+
+            <div asp-validation-summary="ModelOnly"
+                 class="text-danger">
+            </div>
+
+            <!-- Full Name -->
+
+            <div class="form-group mb-3">
+
+                <label asp-for="FullName"
+                       class="control-label">
+                </label>
+
+                <input asp-for="FullName"
+                       class="form-control" />
+
+                <span asp-validation-for="FullName"
+                      class="text-danger">
+                </span>
+
+            </div>
+
+            <!-- Gender -->
+
+            <div class="form-group mb-3">
+
+                <label asp-for="Gender"
+                       class="control-label">
+                </label>
+
+                <input asp-for="Gender"
+                       class="form-control" />
+
+                <span asp-validation-for="Gender"
+                      class="text-danger">
+                </span>
+
+            </div>
+
+            <!-- Age -->
+
+            <div class="form-group mb-3">
+
+                <label asp-for="Age"
+                       class="control-label">
+                </label>
+
+                <input asp-for="Age"
+                       class="form-control" />
+
+                <span asp-validation-for="Age"
+                      class="text-danger">
+                </span>
+
+            </div>
+
+            <!-- Phone -->
+
+            <div class="form-group mb-3">
+
+                <label asp-for="Phone"
+                       class="control-label">
+                </label>
+
+                <input asp-for="Phone"
+                       class="form-control" />
+
+                <span asp-validation-for="Phone"
+                      class="text-danger">
+                </span>
+
+            </div>
+
+            <!-- Address -->
+
+            <div class="form-group mb-3">
+
+                <label asp-for="Address"
+                       class="control-label">
+                </label>
+
+                <input asp-for="Address"
+                       class="form-control" />
+
+                <span asp-validation-for="Address"
+                      class="text-danger">
+                </span>
+
+            </div>
+
+            <!-- Update Button -->
+
+            <div class="form-group">
+
+                <input type="submit"
+                       value="Save"
+                       class="btn btn-success" />
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<!-- Back Button -->
+
+<div class="mt-3">
+
+    <a asp-action="Index">
+        Back to List
+    </a>
+
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

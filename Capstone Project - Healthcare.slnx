@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="HealthcareAnalytics.API/HealthcareAnalytics.API.csproj" />
+  <Project Path="HealthcareAnalytics.Core/HealthcareAnalytics.Core.csproj" />
+  <Project Path="HealthcareAnalytics.Data/HealthcareAnalytics.Data.csproj" />
+  <Project Path="HealthcareAnalytics.Service/HealthcareAnalytics.Service.csproj" />
+  <Project Path="HealthcareAnalytics.Tests/HealthcareAnalytics.Tests.csproj" />
+  <Project Path="HealthcareAnalytics.Web/HealthcareAnalytics.Web.csproj" />
+</Solution>

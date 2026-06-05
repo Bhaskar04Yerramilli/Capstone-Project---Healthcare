@@ -1,0 +1,153 @@
+﻿@model IEnumerable<HealthcareAnalytics.Core.Entities.Patient>
+
+@{
+    ViewData["Title"] = "Patients";
+}
+
+<!-- ========================================= -->
+<!-- Patients Heading -->
+<!-- ========================================= -->
+
+<h1>Patients List</h1>
+
+<!-- ========================================= -->
+<!-- Search Bar -->
+<!-- ========================================= -->
+
+<form method="get" asp-action="Index" class="mb-3">
+
+    <div class="row">
+
+        <!-- Search Input -->
+        <div class="col-md-4">
+
+            <input type="text"
+                   name="searchString"
+                   class="form-control"
+                   placeholder="Search patient by name..." />
+
+        </div>
+
+        <!-- Search Button -->
+        <div class="col-md-2">
+
+            <button type="submit"
+                    class="btn btn-success">
+
+                Search
+
+            </button>
+
+        </div>
+
+        <!-- Clear Button -->
+        <div class="col-md-2">
+
+            <a asp-action="Index"
+               class="btn btn-secondary">
+
+                Clear
+
+            </a>
+
+        </div>
+
+    </div>
+
+</form>
+
+<!-- ========================================= -->
+<!-- Add Patient Button -->
+<!-- ========================================= -->
+
+<p>
+
+    <a asp-action="Create"
+       class="btn btn-primary">
+
+        Add New Patient
+
+    </a>
+
+</p>
+
+<!-- ========================================= -->
+<!-- Patients Table -->
+<!-- ========================================= -->
+
+<table class="table table-bordered table-striped">
+
+    <thead>
+
+        <tr>
+
+            <th>Patient ID</th>
+
+            <th>Full Name</th>
+
+            <th>Gender</th>
+
+            <th>Age</th>
+
+            <th>Phone</th>
+
+            <th>Address</th>
+
+            <th>Actions</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <!-- Patient Details -->
+
+                <td>@item.PatientId</td>
+
+                <td>@item.FullName</td>
+
+                <td>@item.Gender</td>
+
+                <td>@item.Age</td>
+
+                <td>@item.Phone</td>
+
+                <td>@item.Address</td>
+
+                <!-- Action Buttons -->
+
+                <td>
+
+                    <!-- Edit Button -->
+
+                    <a asp-action="Edit"
+                       asp-route-id="@item.PatientId"
+                       class="btn btn-warning btn-sm">
+
+                        Edit
+
+                    </a>
+
+                    <!-- Delete Button -->
+
+                    <a asp-action="Delete"
+                       asp-route-id="@item.PatientId"
+                       class="btn btn-danger btn-sm">
+
+                        Delete
+
+                    </a>
+
+                </td>
+
+            </tr>
+        }
+
+    </tbody>
+
+</table>

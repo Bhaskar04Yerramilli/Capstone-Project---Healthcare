@@ -1,0 +1,128 @@
+﻿@model HealthcareAnalytics.Web.ViewModels.AppointmentViewModel
+
+@{
+    ViewData["Title"] = "Create Appointment";
+}
+
+<!-- Page Heading -->
+<h1>Create Appointment</h1>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+
+        <!-- Form starts -->
+        <form asp-action="Create">
+
+            <!-- Validation Summary -->
+            <div asp-validation-summary="ModelOnly"
+                 class="text-danger">
+            </div>
+
+            <!-- Patient ID -->
+            <div class="form-group mb-3">
+
+                <label asp-for="PatientId"
+                       class="control-label">
+                </label>
+
+                <input asp-for="PatientId"
+                       class="form-control" />
+
+                <span asp-validation-for="PatientId"
+                      class="text-danger">
+                </span>
+
+            </div>
+
+            <!-- Doctor ID -->
+            <div class="form-group mb-3">
+
+                <label asp-for="DoctorId"
+                       class="control-label">
+                </label>
+
+                <input asp-for="DoctorId"
+                       class="form-control" />
+
+                <span asp-validation-for="DoctorId"
+                      class="text-danger">
+                </span>
+
+            </div>
+
+            <!-- Appointment Date -->
+            <div class="form-group mb-3">
+
+                <label asp-for="AppointmentDate"
+                       class="control-label">
+                </label>
+
+                <input asp-for="AppointmentDate"
+                       class="form-control" />
+
+                <span asp-validation-for="AppointmentDate"
+                      class="text-danger">
+                </span>
+
+            </div>
+
+            <!-- Status -->
+            <div class="form-group mb-3">
+
+                <label asp-for="Status"
+                       class="control-label">
+                </label>
+
+                <input asp-for="Status"
+                       class="form-control" />
+
+                <span asp-validation-for="Status"
+                      class="text-danger">
+                </span>
+
+            </div>
+
+            <!-- Notes -->
+            <div class="form-group mb-3">
+
+                <label asp-for="Notes"
+                       class="control-label">
+                </label>
+
+                <input asp-for="Notes"
+                       class="form-control" />
+
+                <span asp-validation-for="Notes"
+                      class="text-danger">
+                </span>
+
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+
+                <input type="submit"
+                       value="Create"
+                       class="btn btn-primary" />
+
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+<br />
+
+<!-- Back Button -->
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

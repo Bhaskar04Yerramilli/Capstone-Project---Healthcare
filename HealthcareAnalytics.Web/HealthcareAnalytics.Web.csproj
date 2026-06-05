@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HealthcareAnalytics.Core\HealthcareAnalytics.Core.csproj" />
+    <ProjectReference Include="..\HealthcareAnalytics.Data\HealthcareAnalytics.Data.csproj" />
+    <ProjectReference Include="..\HealthcareAnalytics.Service\HealthcareAnalytics.Service.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,195 @@
+﻿@model IEnumerable<HealthcareAnalytics.Web.ViewModels.AppointmentViewModel>
+
+@{
+    ViewData["Title"] = "Appointments";
+}
+
+<!-- ========================================= -->
+<!-- Page Heading -->
+<!-- ========================================= -->
+
+<h1>Appointments List</h1>
+
+<!-- ========================================= -->
+<!-- Search Bar -->
+<!-- ========================================= -->
+
+<form method="get"
+      asp-action="Index"
+      class="mb-3">
+
+    <div class="row">
+
+        <!-- Search Input -->
+        <div class="col-md-4">
+
+            <input type="text"
+                   name="searchString"
+                   class="form-control"
+                   placeholder="Search by Status, Patient ID or Doctor ID..." />
+
+        </div>
+
+        <!-- Search Button -->
+        <div class="col-md-2">
+
+            <button type="submit"
+                    class="btn btn-success">
+
+                Search
+
+            </button>
+
+        </div>
+
+        <!-- Clear Button -->
+        <div class="col-md-2">
+
+            <a asp-action="Index"
+               class="btn btn-secondary">
+
+                Clear
+
+            </a>
+
+        </div>
+
+    </div>
+
+</form>
+
+<!-- ========================================= -->
+<!-- Create Appointment Button -->
+<!-- ========================================= -->
+
+<p>
+
+    <a asp-action="Create"
+       class="btn btn-primary">
+
+        Add New Appointment
+
+    </a>
+
+</p>
+
+<!-- ========================================= -->
+<!-- Appointments Table -->
+<!-- ========================================= -->
+
+<table class="table table-bordered table-striped">
+
+    <!-- Table Heading -->
+
+    <thead class="table-dark">
+
+        <tr>
+
+            <th>
+                Appointment ID
+            </th>
+
+            <th>
+                Patient ID
+            </th>
+
+            <th>
+                Doctor ID
+            </th>
+
+            <th>
+                Appointment Date
+            </th>
+
+            <th>
+                Status
+            </th>
+
+            <th>
+                Notes
+            </th>
+
+            <th>
+                Actions
+            </th>
+
+        </tr>
+
+    </thead>
+
+    <!-- Table Body -->
+
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <!-- Appointment ID -->
+
+                <td>
+                    @item.AppointmentId
+                </td>
+
+                <!-- Patient ID -->
+
+                <td>
+                    @item.PatientId
+                </td>
+
+                <!-- Doctor ID -->
+
+                <td>
+                    @item.DoctorId
+                </td>
+
+                <!-- Appointment Date -->
+
+                <td>
+                    @item.AppointmentDate
+                </td>
+
+                <!-- Status -->
+
+                <td>
+                    @item.Status
+                </td>
+
+                <!-- Notes -->
+
+                <td>
+                    @item.Notes
+                </td>
+
+                <!-- Action Buttons -->
+
+                <td>
+
+                    <!-- Edit Button -->
+
+                    <a asp-action="Edit"
+                       asp-route-id="@item.AppointmentId"
+                       class="btn btn-warning btn-sm">
+
+                        Edit
+
+                    </a>
+
+                    <!-- Delete Button -->
+
+                    <a asp-action="Delete"
+                       asp-route-id="@item.AppointmentId"
+                       class="btn btn-danger btn-sm">
+
+                        Delete
+
+                    </a>
+
+                </td>
+
+            </tr>
+        }
+
+    </tbody>
+
+</table>
